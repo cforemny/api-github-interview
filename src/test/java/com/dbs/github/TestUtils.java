@@ -4,7 +4,11 @@ import com.dbs.github.dto.GitHubApiResponseDto;
 import com.dbs.github.model.GitHubRepositoryDetail;
 import lombok.experimental.UtilityClass;
 
-import static com.dbs.github.TestConstants.*;
+import static com.dbs.github.TestConstants.CLONE_URL;
+import static com.dbs.github.TestConstants.CREATED_AT;
+import static com.dbs.github.TestConstants.DESCRIPTION;
+import static com.dbs.github.TestConstants.FULL_NAME;
+import static com.dbs.github.TestConstants.STARS;
 
 @UtilityClass
 public class TestUtils {

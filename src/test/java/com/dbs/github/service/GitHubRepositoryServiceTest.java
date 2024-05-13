@@ -12,7 +12,9 @@ import static com.dbs.github.TestConstants.OWNER;
 import static com.dbs.github.TestConstants.REPOSITORY_NAME;
 import static com.dbs.github.TestUtils.createdGitHubRepositoryDetail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class GitHubRepositoryServiceTest {

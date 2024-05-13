@@ -19,7 +19,10 @@ import static com.dbs.github.TestConstants.OWNER;
 import static com.dbs.github.TestConstants.REPOSITORY_NAME;
 import static com.dbs.github.TestUtils.createGitHubApiResponseDto;
 import static com.dbs.github.TestUtils.createdGitHubRepositoryDetail;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -27,11 +30,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@DirtiesContext
 class GitHubRepositoryControllerTest {
 
-    public static final String GITHUB_API_URL = "https://api.github.com/repos/" + OWNER + "/" + REPOSITORY_NAME;
-    public static final String LOCAL_API_URL = "http://localhost:8080/repositories/" + OWNER + "/" + REPOSITORY_NAME;
+    private static final String GITHUB_API_URL = "https://api.github.com/repos/" + OWNER + "/" + REPOSITORY_NAME;
+    private static final String LOCAL_API_URL = "http://localhost:8080/repositories/" + OWNER + "/" + REPOSITORY_NAME;
     @Autowired
     private MockMvc mockMvc;
     @MockBean
